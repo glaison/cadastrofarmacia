@@ -29,72 +29,178 @@ public class Pessoa implements Serializable {
 
 	@Column(length = 100)
 	private String nome;
-	private Integer idade;
+	
+	private String cpf;
+	private String dataNascimento;
+	private String rua;
+	private String cidade;
+	private String cep;
+	private String estado;
 	private String email;
 	private String telefone;
 	private String observacao;
+
+	
 
 	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+
 
 	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+
+
+	public String getCpf() {
+		return cpf;
 	}
 
-	public Integer getIdade() {
-		return idade;
+
+
+	public String getDataNascimento() {
+		return dataNascimento;
 	}
 
-	public void setIdade(Integer idade) {
-		this.idade = idade;
+
+
+	public String getRua() {
+		return rua;
 	}
+
+
+
+	public String getCidade() {
+		return cidade;
+	}
+
+
+
+	public String getCep() {
+		return cep;
+	}
+
+
+
+	public String getEstado() {
+		return estado;
+	}
+
+
 
 	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+
 
 	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
+
 
 	public String getObservacao() {
 		return observacao;
 	}
 
+
+	
+	
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+
+
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+
+
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+
+
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
+
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+
+
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
 	}
 
+
+
 	public Pessoa() {
 
 	}
+	
+	
 
-	public Pessoa(Integer id, String nome, Integer idade, String email, String telefone, String observacao) {
+
+
+	public Pessoa(Integer id, String nome, String cpf, String dataNascimento, String rua, String cidade, String cep,
+			String estado, String email, String telefone, String observacao) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.idade = idade;
+		this.cpf = cpf;
+		this.dataNascimento = dataNascimento;
+		this.rua = rua;
+		this.cidade = cidade;
+		this.cep = cep;
+		this.estado = estado;
 		this.email = email;
 		this.telefone = telefone;
 		this.observacao = observacao;
 	}
+
+
 
 	@Override
 	public int hashCode() {
@@ -180,7 +286,7 @@ public class Pessoa implements Serializable {
 	 * 
 	 */
 	
-	public static void atualizar(int id, String nome, Integer idade, String email, String telefone, String observacao) {
+	public static void atualizar(int id, String nome, String cpf, String dataNascimento, String rua, String cidade, String cep,String estado, String email, String telefone, String observacao) {
 		
 		EntityManager entityManager = DAO.getEntityManager();
 		
@@ -189,16 +295,22 @@ public class Pessoa implements Serializable {
 		entityManager.getTransaction().begin();
 		
 			p.setNome(nome);
-			p.setIdade(idade);
-			p.setTelefone(telefone);
+			p.setCpf(cpf);
+			p.setDataNascimento(dataNascimento);
+			p.setRua(rua);
+			p.setCidade(cidade);
+			p.setCep(cep);
+			p.setEstado(estado);
 			p.setEmail(email);
+			p.setTelefone(telefone);
 			p.setObservacao(observacao);
 			
 		entityManager.getTransaction().commit();	
 		entityManager.close();
 		
 	}
-	
+
+
 	
 
 }
