@@ -34,13 +34,6 @@ public class PessoaBean implements Serializable {
 		p.setNome(nome);
 	}
 
-	public Integer getIdade() {
-		return p.getIdade();
-	}
-
-	public void setIdade(Integer idade) {
-		p.setIdade(idade);
-	}
 
 	public String getEmail() {
 		return p.getEmail();
@@ -66,6 +59,80 @@ public class PessoaBean implements Serializable {
 		p.setObservacao(observacao);
 	}
 	
+	
+	public void setCpf(String cpf) {
+		p.setCpf(cpf);
+	}
+
+
+
+	public void setDataNascimento(String dataNascimento) {
+		p.setDataNascimento(dataNascimento);
+	}
+
+
+
+	public void setRua(String rua) {
+		p.setRua(rua);
+	}
+
+
+
+	public void setCidade(String cidade) {
+		p.setCidade(cidade);
+	}
+
+
+
+	public void setCep(String cep) {
+		p.setCep(cep);
+		
+	}
+
+
+
+	public void setEstado(String estado) {
+		p.setEstado(estado);
+	}
+	
+	
+	public String getCpf() {
+		return p.getCpf();
+	}
+
+
+
+	public String getDataNascimento() {
+		return p.getDataNascimento();
+	}
+
+
+
+	public String getRua() {
+		return p.getRua();
+	}
+
+
+
+	public String getCidade() {
+		return p.getCidade();
+	}
+
+
+
+	public String getCep() {
+		return p.getCep();
+	}
+
+
+
+	public String getEstado() {
+		return p.getEstado();
+	}
+	
+	
+	
+
 	
 	
 	/*Metodo responsável por chamar a classe pessoa que fará o insert do objeto.
@@ -110,8 +177,8 @@ public class PessoaBean implements Serializable {
 	public void atualizar() {
 		
 		try {
-			
-			Pessoa.atualizar(getId(), getNome(), getIdade(), getEmail(), getTelefone(), getObservacao());
+		
+			Pessoa.atualizar(getId(), getNome(), getCpf(), getDataNascimento(), getRua(), getCidade(), getCep(), getEstado(),getEmail(), getTelefone(), getObservacao());
 			
 		}catch (Exception ex) {
 			ex.printStackTrace();
