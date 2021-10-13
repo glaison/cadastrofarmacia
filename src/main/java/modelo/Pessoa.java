@@ -18,7 +18,7 @@ import org.hibernate.HibernateError;
 
 import dao.DAO;
 
-@Entity
+@Entity 
 public class Pessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;

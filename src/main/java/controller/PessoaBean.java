@@ -10,7 +10,7 @@ import javax.faces.bean.ViewScoped;
 import modelo.Pessoa;
 
 @ManagedBean
-@ViewScoped
+@ViewScoped 
 public class PessoaBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
